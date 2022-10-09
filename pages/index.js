@@ -19,7 +19,7 @@ import web6 from "../public/web6.png";
 import { useState } from "react";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   return (
     <div className={darkMode ? "dark font-InterTight" : "font-InterTight"}>
       <Head>
@@ -29,9 +29,9 @@ export default function Home() {
       </Head>
 
       <main className=" bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
-        <section className=" min-h-screen">
+        <section>
           {/*Navigasyon*/}
-          <nav className=" py-10 mb-12 flex justify-between">
+          <nav className="py-10 mb-12 flex justify-between">
             <h1 className=" text-2xl font-burtons dark:text-teal-200">
               kraytage
             </h1>
@@ -55,49 +55,89 @@ export default function Home() {
             </ul>
           </nav>
           {/* Ana giriş*/}
-          <div className=" text-center p-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl md:mt-28">
-              Kraytage
-            </h2>
-            <h3 className="text-2xl py-2 md:text-3xl dark: text-teal-400">
-              Developer and designer.
-            </h3>
-            <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-teal-200">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              ligula nisi, lobortis et porttitor id, sodales a arcu. Nunc
-              feugiat blandit sem, sit amet ullamcorper lorem accumsan a. In
-              eros.
-            </p>
+          <div className=" min-h-screen">
+            <div className=" text-center p-10">
+              <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl md:mt-28">
+                Eray Kırkpınar
+              </h2>
+              <h3 className="text-2xl py-2 md:text-3xl dark: text-teal-400">
+                Fullstack Developer
+              </h3>
+              <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-teal-200">
+                I'm Eray Kırkpınar and I use{" "}
+                <span className="text-teal-500">Kraytage</span> as a nickname on
+                <br />
+                social media. I love games and music.
+              </p>
+            </div>
+
+            {/* Sosyal Medya */}
+            <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-600">
+              <AiFillLinkedin />
+              <AiFillYoutube />
+            </div>
           </div>
-          {/* Sosyal Medya */}
-          <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-600">
-            <AiFillTwitterCircle />
-            <AiFillLinkedin />
-            <AiFillYoutube />
-          </div>
+        </section>
+        <section>
           {/*Hoşgeldin fotoğrafı */}
-          <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-32 mb-32 overflow-hidden md:h-96 md:w-96 md:mt-96">
-            <Image src={deved} layout="fill" objectFit="cover" />
+          <div className=" min-h-screen  text-center">
+            <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mb-16 overflow-hidden">
+              <Image src={deved} layout="fill" objectFit="cover" />
+            </div>
+            <h3 className="text-4xl text-teal-400">About Me</h3>
+            <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-2xl mx-auto dark:text-teal-200">
+              Hello there! My name is Eray and I enjoy creating living things on
+              the internet. My interest in programming started in 2007 when I
+              bought my first computer. After dealing with{" "}
+              <span className="text-teal-500">HTML</span> and{" "}
+              <span className="text-teal-500">CSS</span> for a while, I learned{" "}
+              <span className="text-teal-500">Python</span> and{" "}
+              <span className="text-teal-500">C#</span>. All this made me a{" "}
+              <span className="text-teal-500">Fullstack Developer.</span>
+            </p>
+            <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-2xl mx-auto dark:text-teal-200">
+              Here are a few technologies I’ve been working with recently:
+            </p>
+            <div className="flex justify-center gap-20">
+              <ul className="list-disc">
+                <li className="text-xl text-teal-400 text-left">Python</li>
+                <li className="text-xl text-teal-400 text-left">C# / .Net</li>
+                <li className="text-xl text-teal-400 text-left">React.js</li>
+                <li className="text-xl text-teal-400 text-left">Next.js</li>
+              </ul>
+              <ul className="list-disc">
+                <li className="text-xl text-teal-400 text-left">
+                  Premiere Pro
+                </li>
+                <li className="text-xl text-teal-400 text-left">
+                  Davinci Resolve
+                </li>
+                <li className="text-xl text-teal-400 text-left">
+                  After Effects
+                </li>
+                <li className="text-xl text-teal-400 text-left">Photoshop</li>
+              </ul>
+            </div>
           </div>
         </section>
         {/*Kartlar*/}
-        <section>
-          <div>
-            <h3 className=" text-3xl py-1 dark:text-teal-400">
+        <section className="min-h-screen">
+          <div className="text-center">
+            <h3 className=" text-4xl py-1 mb-5 dark:text-teal-400">
               Services I Offer
             </h3>
-            <p className="text-md -py-2 leading-8 text-gray-800 dark:text-teal-200">
+            <p className="text-xl leading-8 text-gray-800 dark:text-teal-200">
               Lorem <span className="text-teal-500">ipsum</span> dolor sit amet,
               consectetur adipiscing elit. Praesent ligula nisi, lobortis et
               porttitor id.
             </p>
-            <p className="text-md -py-2 leading-8 text-gray-800 dark:text-teal-200">
+            <p className="text-xl leading-8 text-gray-800 dark:text-teal-200">
               Sodales a arcu. Nunc feugiat blandit sem, sit amet ullamcorper
               lorem accumsan a. In eros.
             </p>
           </div>
           {/*Kart1*/}
-          <div className=" lg:flex gap-10">
+          <div className=" lg:flex gap-10 mt-12">
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800">
               <Image src={design} width={100} height={100} />
               <h3 className=" text-lg font-medium pt-8 pb-2 dark:text-teal-400">
@@ -154,10 +194,10 @@ export default function Home() {
           </div>
         </section>
         {/*Portfolio*/}
-        <section>
-          <div>
-            <h3 className=" text-3xl py-1 dark:text-teal-400">Portfolio</h3>
-            <p className=" py-2 dark:text-teal-200">
+        <section className="min-h-screen">
+          <div className="text-center">
+            <h3 className=" text-4xl py-1 mb-5 dark:text-teal-400">Portfolio</h3>
+            <p className=" py-2  text-xl dark:text-teal-200">
               Lorem <span className="text-teal-500">ipsum</span> dolor sit amet,
               consectetur adipiscing elit. Pellentesque egestas rutrum dolor,
               consectetur consequat nibh malesuada ac. Donec tristique vel odio
@@ -165,7 +205,7 @@ export default function Home() {
               risus. Morbi placerat blandit mi. Donec congue auctor auctor.
               Vestibulum nec dolor a eros lobortis volutpat. Cras nec nibh.
             </p>
-            <p className=" py-2 dark:text-teal-200">
+            <p className=" py-2 text-xl dark:text-teal-200">
               Morbi placerat blandit mi. Donec congue auctor auctor. Vestibulum
               nec dolor a eros lobortis volutpat. Cras nec nibh.
             </p>
