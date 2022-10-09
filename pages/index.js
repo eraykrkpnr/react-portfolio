@@ -64,7 +64,7 @@ export default function Home() {
                 Fullstack Developer
               </h3>
               <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-teal-200">
-                I'm Eray Kırkpınar and I use&nbsp;
+                I am Eray Kırkpınar and I use{" "}
                 <span className="text-teal-500">Kraytage</span> as a nickname on
                 <br />
                 social media. I love games and music.
@@ -88,11 +88,11 @@ export default function Home() {
             <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-2xl mx-auto dark:text-teal-200">
               Hello there! My name is Eray and I enjoy creating living things on
               the internet. My interest in programming started in 2007 when I
-              bought my first computer. After dealing with&nbsp;
-              <span className="text-teal-500">HTML</span> and&nbsp;
-              <span className="text-teal-500">CSS</span> for a while, I learned&nbsp;
-              <span className="text-teal-500">Python</span> and&nbsp;
-              <span className="text-teal-500">C#</span>. All this made me a&nbsp;
+              bought my first computer. After dealing with{" "}
+              <span className="text-teal-500">HTML</span> and{" "}
+              <span className="text-teal-500">CSS</span> for a while, I learned{" "}
+              <span className="text-teal-500">Python</span> and{" "}
+              <span className="text-teal-500">C#</span>. All this made me a{" "}
               <span className="text-teal-500">Fullstack Developer.</span>
             </p>
             <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-2xl mx-auto dark:text-teal-200">
