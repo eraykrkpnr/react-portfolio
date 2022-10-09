@@ -17,9 +17,16 @@ import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
 import { useState } from "react";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
+  const [text, count] = useTypewriter({
+    words: ["I'm a Fullstack Developer", "I love games", "I love music"],
+    loop: true,
+    delaySpeed: 2000,
+  });
   return (
     <div className={darkMode ? "dark font-InterTight" : "font-InterTight"}>
       <Head>
@@ -28,14 +35,44 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className=" bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
+      <main className=" bg-white px-10 md:px-20 lg:px-40 scrollbar h-screen scrollbar-track-teal-700 scrollbar-thumb-teal-200 dark:bg-gray-900">
         <section>
           {/*Navigasyon*/}
           <nav className="py-10 mb-12 flex justify-between">
-            <h1 className=" text-2xl font-burtons dark:text-teal-200">
+            <motion.h1
+              initial={{
+                x: -500,
+                opacity: 0,
+                scale: 0.5,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 1.5,
+              }}
+              className=" text-2xl font-burtons dark:text-teal-200"
+            >
               kraytage
-            </h1>
-            <ul className=" flex items-center">
+            </motion.h1>
+            <motion.ul
+              initial={{
+                x: 500,
+                opacity: 0,
+                scale: 0.5,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 1.5,
+              }}
+              className=" flex items-center"
+            >
               <li>
                 <BsFillMoonStarsFill
                   onClick={() => {
@@ -52,7 +89,7 @@ export default function Home() {
                   Resume
                 </a>
               </li>
-            </ul>
+            </motion.ul>
           </nav>
           {/* Ana giriş*/}
           <div className=" min-h-screen">
@@ -61,7 +98,8 @@ export default function Home() {
                 Eray Kırkpınar
               </h2>
               <h3 className="text-2xl py-2 md:text-3xl dark: text-teal-400">
-                Fullstack Developer
+                {text}
+                <Cursor cursorColor="#F7AB0A" />
               </h3>
               <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-teal-200">
                 I am Eray Kırkpınar and I use{" "}
@@ -196,7 +234,9 @@ export default function Home() {
         {/*Portfolio*/}
         <section className="min-h-screen">
           <div className="text-center">
-            <h3 className=" text-4xl py-1 mb-5 dark:text-teal-400">Portfolio</h3>
+            <h3 className=" text-4xl py-1 mb-5 dark:text-teal-400">
+              Portfolio
+            </h3>
             <p className=" py-2  text-xl dark:text-teal-200">
               Lorem <span className="text-teal-500">ipsum</span> dolor sit amet,
               consectetur adipiscing elit. Pellentesque egestas rutrum dolor,
