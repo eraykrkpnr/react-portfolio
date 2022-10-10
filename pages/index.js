@@ -1,9 +1,12 @@
 import Head from "next/head";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
-  AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillYoutube,
+  AiFillHome,
+  AiFillInfoCircle,
+  AiFillCode,
+  AiFillAppstore
 } from "react-icons/ai";
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
@@ -12,10 +15,6 @@ import code from "../public/code.png";
 import consulting from "../public/consulting.png";
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
-import web3 from "../public/web3.png";
-import web4 from "../public/web4.png";
-import web5 from "../public/web5.png";
-import web6 from "../public/web6.png";
 import { useState } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
@@ -23,7 +22,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [text, count] = useTypewriter({
-    words: ["I'm a Fullstack Developer", "I love games", "I love music"],
+    words: ["I'm a Fullstack Developer.", "I love games.", "I love music."],
     loop: true,
     delaySpeed: 2000,
   });
@@ -35,8 +34,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className=" bg-white px-10 md:px-20 lg:px-40 scrollbar h-screen scrollbar-track-teal-700 scrollbar-thumb-teal-200 dark:bg-gray-900">
-        <section>
+      <main className=" bg-white px-10 md:px-20 lg:px-40 scroll-smooth scrollbar h-screen scrollbar-track-teal-700 scrollbar-thumb-teal-200 dark:bg-gray-900 md:overflow-y-hidden md:overflow-x-hidden">
+        <section id="welcome">
           {/*Navigasyon*/}
           <nav className="py-10 mb-12 flex justify-between">
             <motion.h1
@@ -84,7 +83,7 @@ export default function Home() {
               <li>
                 <a
                   className=" bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8"
-                  href="#"
+                  href="#services"
                 >
                   Resume
                 </a>
@@ -92,14 +91,22 @@ export default function Home() {
             </motion.ul>
           </nav>
           {/* Ana giriş*/}
-          <div className=" min-h-screen">
+          <div className=" min-h-screen relative">
+            <div className=" invisible fixed pb-96 min-h-screen text-teal-600 flex items-center lg:visible">
+              <ul className="text-2xl">
+                <li className="py-6"><a href="#welcome"><AiFillHome /></a></li>
+                <li className="py-6"><a href="#about_me"><AiFillInfoCircle /></a></li>
+                <li className="py-6"><a href="#services"><AiFillCode /></a></li>
+                <li className="py-6"><a href="#portfolio"><AiFillAppstore /></a></li>
+              </ul>
+            </div>
             <div className=" text-center p-10">
               <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl md:mt-28">
                 Eray Kırkpınar
               </h2>
               <h3 className="text-2xl py-2 md:text-3xl dark: text-teal-400">
                 {text}
-                <Cursor cursorColor="#F7AB0A" />
+                <Cursor cursorColor="rgb(153 246 228)" />
               </h3>
               <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-teal-200">
                 I am Eray Kırkpınar and I use{" "}
@@ -116,9 +123,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section>
+        <section id="about_me">
           {/*Hoşgeldin fotoğrafı */}
-          <div className=" min-h-screen  text-center">
+          <div className=" min-h-screen  text-center pt-16">
             <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mb-16 overflow-hidden">
               <Image src={deved} layout="fill" objectFit="cover" />
             </div>
@@ -159,7 +166,7 @@ export default function Home() {
           </div>
         </section>
         {/*Kartlar*/}
-        <section className="min-h-screen">
+        <section id="services" className="min-h-screen py-24 md:px-32">
           <div className="text-center">
             <h3 className=" text-4xl py-1 mb-5 dark:text-teal-400">
               Services I Offer
@@ -232,7 +239,7 @@ export default function Home() {
           </div>
         </section>
         {/*Portfolio*/}
-        <section className="min-h-screen">
+        <section id="portfolio" className="min-h-screen pt-16 md:px-32">
           <div className="text-center">
             <h3 className=" text-4xl py-1 mb-5 dark:text-teal-400">
               Portfolio
@@ -264,42 +271,6 @@ export default function Home() {
             <div className=" basis-1/3 flex-1 ">
               <Image
                 src={web2}
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-              />
-            </div>
-            <div className=" basis-1/3 flex-1 ">
-              <Image
-                src={web3}
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-              />
-            </div>
-            <div className=" basis-1/3 flex-1 ">
-              <Image
-                src={web4}
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-              />
-            </div>
-            <div className=" basis-1/3 flex-1 ">
-              <Image
-                src={web5}
-                className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-              />
-            </div>
-            <div className=" basis-1/3 flex-1 ">
-              <Image
-                src={web6}
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
