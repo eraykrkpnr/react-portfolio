@@ -34,7 +34,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className=" bg-white px-10 md:px-20 lg:px-40 scroll-smooth scrollbar h-screen scrollbar-track-teal-700 scrollbar-thumb-teal-200 dark:bg-gray-900 md:overflow-y-hidden md:overflow-x-hidden">
+      <main className=" bg-white px-10 md:px-20 lg:px-40 scroll-smooth scrollbar h-screen scrollbar-track-gray-900 scrollbar-gray-900 dark:bg-gray-900 md:overflow-y-hidden md:overflow-x-hidden">
         <section id="welcome">
           {/*Navigasyon*/}
           <nav className="py-10 mb-12 flex justify-between">
