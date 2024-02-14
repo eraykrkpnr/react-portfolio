@@ -6,10 +6,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      "eray" : "#09090b",
+      "textColor" : "#f9f9f9"
+    },
     extend: {
       fontFamily: {
         burtons: "burtons",
-        InterTight: "InterTight"
+        InterTight: "InterTight",
+        Coolvetica: "Coolvetica"
       }
     },
   },

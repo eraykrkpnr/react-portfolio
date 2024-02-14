@@ -29,3 +29,8 @@ a {
   font-family: "InterTight";
   src: url("../public/InterTight.ttf");
 }
+
+@font-face {
+  font-family: "Coolvetica";
+  src: url("../public/Coolvetica.otf");
+}
