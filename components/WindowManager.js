@@ -15,8 +15,8 @@ function WindowManager({ window, onClose, onBringToFront, pointer }) {
         y: window.defaultY || 150,
     });
     const [size, setSize] = useState({
-        width: 1040,
-        height: 750,
+        width: 750,
+        height: 500,
     });
     const [isResizing, setIsResizing] = useState(false);
     const [resizeType, setResizeType] = useState("");
