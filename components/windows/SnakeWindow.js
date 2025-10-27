@@ -30,6 +30,9 @@ function SnakeWindow() {
             };
             isOnSnake = snake.some((segment) => segment.x === newFood.x && segment.y === newFood.y);
         }
+        // Ensure food is always within bounds
+        newFood.x = Math.min(newFood.x, GRID_WIDTH - 1);
+        newFood.y = Math.min(newFood.y, GRID_HEIGHT - 1);
         return newFood;
     };
 
@@ -121,70 +124,76 @@ function SnakeWindow() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-full gap-4 p-4">
-            <div className="text-center">
-                <h2 className="text-3xl font-bold text-green-400 mb-2">🐍 SNAKE</h2>
-                <p className="text-base text-gray-300">Score: {score}</p>
-            </div>
-
-            {/* Game Grid */}
-            <div
-                className="bg-black border-4 border-green-400 relative"
-                style={{
-                    width: GRID_WIDTH * CELL_SIZE,
-                    height: GRID_HEIGHT * CELL_SIZE,
-                    position: "relative",
-                }}
-            >
-                {/* Food */}
+        <div className="flex gap-6 h-full p-4">
+            {/* Left: Game Grid */}
+            <div className="flex flex-col items-center justify-center">
+                {/* Game Grid */}
                 <div
+                    className="bg-black border-4 border-green-400 relative"
                     style={{
-                        position: "absolute",
-                        left: food.x * CELL_SIZE,
-                        top: food.y * CELL_SIZE,
-                        width: CELL_SIZE,
-                        height: CELL_SIZE,
-                        backgroundColor: "#ef4444",
-                        borderRadius: "2px",
+                        width: GRID_WIDTH * CELL_SIZE,
+                        height: GRID_HEIGHT * CELL_SIZE,
+                        position: "relative",
                     }}
-                />
-
-                {/* Snake */}
-                {snake.map((segment, index) => (
+                >
+                    {/* Food */}
                     <div
-                        key={index}
-                        className={`absolute ${index === 0 ? "bg-lime-400" : "bg-lime-500"}`}
                         style={{
-                            left: segment.x * CELL_SIZE,
-                            top: segment.y * CELL_SIZE,
+                            position: "absolute",
+                            left: food.x * CELL_SIZE,
+                            top: food.y * CELL_SIZE,
                             width: CELL_SIZE,
                             height: CELL_SIZE,
-                            border: "1px solid #00aa00",
+                            backgroundColor: "#ef4444",
+                            borderRadius: "2px",
                         }}
                     />
-                ))}
+
+                    {/* Snake */}
+                    {snake.map((segment, index) => (
+                        <div
+                            key={index}
+                            className={`absolute ${index === 0 ? "bg-lime-400" : "bg-lime-500"}`}
+                            style={{
+                                left: segment.x * CELL_SIZE,
+                                top: segment.y * CELL_SIZE,
+                                width: CELL_SIZE,
+                                height: CELL_SIZE,
+                                border: "1px solid #00aa00",
+                            }}
+                        />
+                    ))}
+                </div>
             </div>
 
-            {/* Game Over Screen */}
-            {gameOver && (
-                <div className="text-center space-y-2">
-                    <p className="text-2xl font-bold text-red-500">GAME OVER!</p>
-                    <p className="text-base text-gray-300">Final Score: {score}</p>
-                    <button
-                        onClick={resetGame}
-                        className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-bold rounded text-base transition-colors"
-                    >
-                        Play Again
-                    </button>
+            {/* Right: Controls and Info */}
+            <div className="flex flex-col justify-center gap-4 flex-1">
+                <div>
+                    <h2 className="text-2xl font-bold text-green-400 mb-2">🐍 SNAKE</h2>
+                    <p className="text-base text-gray-300">Score: {score}</p>
                 </div>
-            )}
 
-            {/* Controls */}
-            {!gameOver && (
-                <div className="text-center text-sm text-gray-400">
-                    <p>Use ARROW KEYS or WASD to move</p>
-                </div>
-            )}
+                {/* Game Over Screen */}
+                {gameOver && (
+                    <div className="text-center space-y-2">
+                        <p className="text-2xl font-bold text-red-500">GAME OVER!</p>
+                        <p className="text-base text-gray-300">Final Score: {score}</p>
+                        <button
+                            onClick={resetGame}
+                            className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-bold rounded text-base transition-colors"
+                        >
+                            Play Again
+                        </button>
+                    </div>
+                )}
+
+                {/* Controls */}
+                {!gameOver && (
+                    <div className="text-center text-sm text-gray-400">
+                        <p>Use ARROW KEYS or WASD to move</p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
