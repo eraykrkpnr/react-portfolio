@@ -9,7 +9,7 @@ function AboutMeWindow() {
             </h2>
 
             <div className="space-y-3 text-gray-300">
-                <p>
+                <p className="text-base">
                     Software Engineer with 5 years of experience in backend and full-stack development using C#, .NET, Python and JavaScript. Recently focused on game development with Unity, gaining hands-on experience in building multiplayer systems, client-host communication, and gameplay logic. Strong understanding of object-oriented programming, async workflows, and clean architecture.
                 </p>
 
@@ -39,7 +39,7 @@ function AboutMeWindow() {
                     <h3 className="text-lg font-semibold text-cyan-400 mb-2">
                         Game Development Background
                     </h3>
-                    <p>
+                    <p className="text-base">
                         Recently focused on game development with Unity, gaining hands-on experience in multiplayer systems using Netcode for GameObjects, integrating Steamworks with Facepunch, and applying asynchronous programming with UniTask. Experienced in using Zenject for dependency injection and Stateless for state machine management, building maintainable and flexible gameplay logic. Passionate about applying solid software engineering principles to create engaging and high-quality game experiences.
                     </p>
                 </div>

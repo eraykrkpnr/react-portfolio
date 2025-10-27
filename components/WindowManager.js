@@ -14,8 +14,8 @@ function WindowManager({ window, onClose, onBringToFront, pointer }) {
         y: window.defaultY || 150,
     });
     const [size, setSize] = useState({
-        width: 600,
-        height: 500,
+        width: 1040,
+        height: 750,
     });
     const [isResizing, setIsResizing] = useState(false);
     const [resizeType, setResizeType] = useState("");
@@ -96,7 +96,7 @@ function WindowManager({ window, onClose, onBringToFront, pointer }) {
             }}
         >
             {/* Window Container */}
-            <div className="bg-gray-900 border border-gray-700 rounded-lg shadow-2xl overflow-hidden flex flex-col h-screen max-h-96">
+            <div className="bg-gray-900 border border-gray-700 rounded-lg shadow-2xl overflow-hidden flex flex-col" style={{ height: `${size.height}px` }}>
                 {/* Title Bar */}
                 <div
                     onMouseDown={handleMouseDown}
@@ -104,7 +104,7 @@ function WindowManager({ window, onClose, onBringToFront, pointer }) {
                 >
                     <div className="flex items-center gap-2">
                         <span className="text-2xl">{window.icon}</span>
-                        <span className="text-white font-semibold">{window.label}</span>
+                        <span className="text-white font-semibold text-lg">{window.label}</span>
                     </div>
                     <button
                         onClick={onClose}

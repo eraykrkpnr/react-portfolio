@@ -13,6 +13,16 @@ module.exports = {
     extend: {
       fontFamily: {
         justAnother: "JustAnotherHand"
+      },
+      fontSize: {
+        'xs': '24px',
+        'sm': '27px',
+        'base': '30px',
+        'lg': '36px',
+        'xl': '42px',
+        '2xl': '48px',
+        '3xl': '54px',
+        '4xl': '72px',
       }
     },
   },

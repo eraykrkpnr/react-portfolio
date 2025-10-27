@@ -32,11 +32,11 @@ function PortfolioWindow() {
                         key={index}
                         className="p-3 bg-green-900/20 border border-green-700/30 rounded-lg hover:border-green-500/50 transition-colors"
                     >
-                        <h3 className="font-semibold text-green-300">{project.name}</h3>
-                        <p className="text-xs text-gray-400 mt-1">
+                        <h3 className="font-semibold text-green-300 text-base">{project.name}</h3>
+                        <p className="text-sm text-gray-400 mt-1">
                             {project.description}
                         </p>
-                        <p className="text-xs text-green-500/70 mt-2">{project.tech}</p>
+                        <p className="text-sm text-green-500/70 mt-2">{project.tech}</p>
                     </div>
                 ))}
             </div>

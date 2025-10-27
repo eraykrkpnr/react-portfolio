@@ -49,13 +49,13 @@ function ServicesWindow() {
                     >
                         <div className="flex items-center gap-2 mb-2">
                             <span className="text-2xl">{skillGroup.icon}</span>
-                            <h3 className="font-semibold text-purple-300">{skillGroup.category}</h3>
+                            <h3 className="font-semibold text-purple-300 text-base">{skillGroup.category}</h3>
                         </div>
                         <div className="flex flex-wrap gap-2">
                             {skillGroup.items.map((skill, idx) => (
                                 <span
                                     key={idx}
-                                    className="px-2 py-1 bg-purple-800/30 border border-purple-600/50 rounded text-xs text-purple-200"
+                                    className="px-2 py-1 bg-purple-800/30 border border-purple-600/50 rounded text-sm text-purple-200"
                                 >
                                     {skill}
                                 </span>

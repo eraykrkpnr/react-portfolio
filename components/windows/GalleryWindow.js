@@ -60,10 +60,7 @@ function GalleryWindow() {
     const currentImage = images[currentIndex];
 
     return (
-        <div className="space-y-4 flex flex-col h-full">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                Gallery
-            </h2>
+        <div className="space-y-4 flex flex-col h-full overflow-hidden">
 
             {/* Image Display with Animation */}
             <div className="relative flex-1 bg-gray-800 rounded-lg overflow-hidden min-h-64">
@@ -105,11 +102,11 @@ function GalleryWindow() {
                 <h3 className="text-lg font-semibold text-yellow-300">
                     {currentImage.title}
                 </h3>
-                <p className="text-sm text-gray-400">{currentImage.description}</p>
+                <p className="text-base text-gray-400">{currentImage.description}</p>
             </div>
 
             {/* Thumbnail Navigation */}
-            <div className="flex gap-2 overflow-x-auto pb-2">
+            <div className="flex gap-2 overflow-x-auto overflow-y-hidden pb-2 flex-shrink-0">
                 {images.map((img, idx) => (
                     <button
                         key={img.id}
