@@ -5,6 +5,7 @@ import ServicesWindow from "./windows/ServicesWindow";
 import PortfolioWindow from "./windows/PortfolioWindow";
 import ContactWindow from "./windows/ContactWindow";
 import GalleryWindow from "./windows/GalleryWindow";
+import SnakeWindow from "./windows/SnakeWindow";
 
 function WindowManager({ window, onClose, onBringToFront, pointer }) {
     const windowRef = useRef(null);
@@ -71,6 +72,8 @@ function WindowManager({ window, onClose, onBringToFront, pointer }) {
                 return <GalleryWindow />;
             case "contact":
                 return <ContactWindow />;
+            case "snake":
+                return <SnakeWindow />;
             default:
                 return null;
         }

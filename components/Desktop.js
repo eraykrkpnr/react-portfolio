@@ -42,6 +42,12 @@ function Desktop() {
             image: "/images/contact.png",
             color: "from-orange-500 to-red-500",
         },
+        {
+            id: "snake",
+            label: "Snake",
+            icon: "🐍",
+            color: "from-green-500 to-lime-500",
+        },
     ];
 
     const openWindow = (item) => {
