@@ -15,8 +15,8 @@ function Desktop() {
         },
         {
             id: "services",
-            label: "Services",
-            icon: "⚙️",
+            label: "Skills",
+            icon: "💡",
             color: "from-purple-500 to-pink-500",
         },
         {

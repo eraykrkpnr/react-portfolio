@@ -8,6 +8,19 @@ function Home() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        // Preload gallery images
+        const galleryImages = [
+            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1554224311-beee415c201f?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop",
+        ];
+
+        galleryImages.forEach((url) => {
+            const img = new Image();
+            img.src = url;
+        });
+
         // Her sayfaya girildiğinde yükleme ekranını göster
         setIsLoading(true);
     }, []);

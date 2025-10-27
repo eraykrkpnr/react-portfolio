@@ -10,21 +10,20 @@ function AboutMeWindow() {
 
             <div className="space-y-3 text-gray-300">
                 <p>
-                    Hi! I&apos;m a passionate developer focused on creating beautiful,
-                    functional digital experiences. I specialize in modern web
-                    technologies and design patterns.
+                    Software Engineer with 5 years of experience in backend and full-stack development using C#, .NET, Python and JavaScript. Recently focused on game development with Unity, gaining hands-on experience in building multiplayer systems, client-host communication, and gameplay logic. Strong understanding of object-oriented programming, async workflows, and clean architecture.
                 </p>
 
                 <div>
-                    <h3 className="text-lg font-semibold text-cyan-400 mb-2">Skills</h3>
+                    <h3 className="text-lg font-semibold text-cyan-400 mb-2">Skills & Technologies</h3>
                     <div className="flex flex-wrap gap-2">
                         {[
-                            "React",
-                            "Next.js",
-                            "TypeScript",
-                            "Tailwind CSS",
-                            "Node.js",
-                            "MongoDB",
+                            "C#",
+                            ".NET",
+                            "Python",
+                            "JavaScript",
+                            "Unity",
+                            "Backend",
+                            "OOP",
                         ].map((skill) => (
                             <span
                                 key={skill}
@@ -38,11 +37,10 @@ function AboutMeWindow() {
 
                 <div>
                     <h3 className="text-lg font-semibold text-cyan-400 mb-2">
-                        Background
+                        Game Development Background
                     </h3>
                     <p>
-                        With 5+ years of experience in web development, I&apos;ve worked on
-                        diverse projects ranging from startups to established companies.
+                        Recently focused on game development with Unity, gaining hands-on experience in multiplayer systems using Netcode for GameObjects, integrating Steamworks with Facepunch, and applying asynchronous programming with UniTask. Experienced in using Zenject for dependency injection and Stateless for state machine management, building maintainable and flexible gameplay logic. Passionate about applying solid software engineering principles to create engaging and high-quality game experiences.
                     </p>
                 </div>
             </div>

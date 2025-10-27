@@ -2,56 +2,65 @@
 import React from "react";
 
 function ServicesWindow() {
-    const services = [
+    const skills = [
         {
-            icon: "🎨",
-            title: "UI/UX Design",
-            description: "Beautiful, user-centered designs that convert",
+            category: "Languages",
+            items: ["C#", "Python", "JavaScript", "TypeScript"],
+            icon: "💻",
         },
         {
+            category: "Backend & Frameworks",
+            items: [".NET", "Node.js", "REST APIs", "SQL"],
+            icon: "⚙️",
+        },
+        {
+            category: "Game Development",
+            items: ["Unity", "Netcode for GameObjects", "Zenject", "UniTask"],
+            icon: "🎮",
+        },
+        {
+            category: "Tools & Patterns",
+            items: ["Zenject", "Stateless", "OOP", "Clean Architecture"],
+            icon: "🛠️",
+        },
+        {
+            category: "Frontend",
+            items: ["React", "Next.js", "Tailwind CSS", "JavaScript"],
             icon: "⚛️",
-            title: "Frontend Development",
-            description: "React, Vue, and modern JavaScript frameworks",
         },
         {
-            icon: "🔧",
-            title: "Backend Development",
-            description: "Robust APIs and database architecture",
-        },
-        {
-            icon: "📱",
-            title: "Responsive Design",
-            description: "Mobile-first approach for all projects",
-        },
-        {
-            icon: "⚡",
-            title: "Performance Optimization",
-            description: "Lightning-fast loading times and smooth interactions",
-        },
-        {
+            category: "Development Approach",
+            items: ["Full-stack", "Backend Specialist", "Multiplayer Systems", "Client-Host Communication"],
             icon: "🚀",
-            title: "Deployment & DevOps",
-            description: "CI/CD pipelines and cloud infrastructure setup",
         },
     ];
 
     return (
         <div className="space-y-4">
             <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Services
+                Skills & Technologies
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {services.map((service, index) => (
+            <div className="space-y-3 max-h-96 overflow-y-auto pr-2">
+                {skills.map((skillGroup, index) => (
                     <div
                         key={index}
                         className="p-3 bg-purple-900/20 border border-purple-700/30 rounded-lg hover:border-purple-500/50 transition-colors"
                     >
-                        <div className="text-2xl mb-2">{service.icon}</div>
-                        <h3 className="font-semibold text-purple-300">{service.title}</h3>
-                        <p className="text-xs text-gray-400 mt-1">
-                            {service.description}
-                        </p>
+                        <div className="flex items-center gap-2 mb-2">
+                            <span className="text-2xl">{skillGroup.icon}</span>
+                            <h3 className="font-semibold text-purple-300">{skillGroup.category}</h3>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                            {skillGroup.items.map((skill, idx) => (
+                                <span
+                                    key={idx}
+                                    className="px-2 py-1 bg-purple-800/30 border border-purple-600/50 rounded text-xs text-purple-200"
+                                >
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
                     </div>
                 ))}
             </div>

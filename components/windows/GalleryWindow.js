@@ -1,5 +1,5 @@
 // windows/GalleryWindow.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function GalleryWindow() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,6 +38,14 @@ function GalleryWindow() {
             url: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
         },
     ];
+
+    // Preload all images
+    useEffect(() => {
+        images.forEach((image) => {
+            const img = new Image();
+            img.src = image.url;
+        });
+    }, [images]);
 
     const nextImage = () => {
         setDirection("right");
