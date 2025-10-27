@@ -81,19 +81,30 @@ function Desktop() {
         );
     };
 
+    // Split items into chunks of 4 for columns
+    const itemsPerColumn = 4;
+    const itemColumns = [];
+    for (let i = 0; i < desktopItems.length; i += itemsPerColumn) {
+        itemColumns.push(desktopItems.slice(i, i + itemsPerColumn));
+    }
+
     return (
         <div className="dark w-full h-screen bg-black overflow-hidden">
             {/* Desktop Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-purple-950 to-black opacity-80" />
 
-            {/* Desktop Grid Icons */}
-            <div className="relative z-10 p-8 flex flex-col gap-6 w-fit">
-                {desktopItems.map((item) => (
-                    <DesktopIcon
-                        key={item.id}
-                        item={item}
-                        onDoubleClick={() => openWindow(item)}
-                    />
+            {/* Desktop Grid Icons - Multiple columns with 4 items max per column */}
+            <div className="relative z-10 p-8 flex gap-12 w-fit">
+                {itemColumns.map((column, colIdx) => (
+                    <div key={colIdx} className="flex flex-col gap-6">
+                        {column.map((item) => (
+                            <DesktopIcon
+                                key={item.id}
+                                item={item}
+                                onDoubleClick={() => openWindow(item)}
+                            />
+                        ))}
+                    </div>
                 ))}
             </div>
 
@@ -114,13 +125,14 @@ function Desktop() {
             {/* Windows */}
             <div className="absolute inset-0 pointer-events-none">
                 {windows.map((window) => (
-                    <WindowManager
-                        key={window.id}
-                        window={window}
-                        onClose={() => closeWindow(window.id)}
-                        onBringToFront={() => bringToFront(window.id)}
-                        pointer
-                    />
+                    <div key={window.id} className="pointer-events-auto">
+                        <WindowManager
+                            window={window}
+                            onClose={() => closeWindow(window.id)}
+                            onBringToFront={() => bringToFront(window.id)}
+                            pointer
+                        />
+                    </div>
                 ))}
             </div>
         </div>
