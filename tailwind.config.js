@@ -12,9 +12,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        burtons: "burtons",
-        InterTight: "InterTight",
-        Coolvetica: "Coolvetica"
+        justAnother: "JustAnotherHand"
       }
     },
   },

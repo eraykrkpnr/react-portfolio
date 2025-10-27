@@ -15,17 +15,20 @@ function DesktopIcon({ item, onDoubleClick }) {
             <div
                 className={`
                 w-20 h-20 rounded-lg flex items-center justify-center text-4xl
-                transition-all duration-200 transform
+                transition-all duration-200 transform overflow-hidden p-2
                 ${
                     isHovered
-                        ? "scale-110 bg-gradient-to-br shadow-lg shadow-purple-500/50"
-                        : "bg-gradient-to-br opacity-90 hover:opacity-100"
+                        ? "scale-110 shadow-lg shadow-purple-500/50"
+                        : "opacity-90 hover:opacity-100"
                 }
-                ${item.color}
                 backdrop-blur-sm border border-white/10
             `}
             >
-                {item.icon}
+                {item.image ? (
+                    <img src={item.image} alt={item.label} className="w-full h-full object-cover rounded" />
+                ) : (
+                    <span>{item.icon}</span>
+                )}
             </div>
 
             {/* Label */}
