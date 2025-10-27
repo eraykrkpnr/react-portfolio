@@ -10,7 +10,7 @@ function AboutMeWindow() {
 
             <div className="space-y-3 text-gray-300">
                 <p>
-                    Hi! I'm a passionate developer focused on creating beautiful,
+                    Hi! I&apos;m a passionate developer focused on creating beautiful,
                     functional digital experiences. I specialize in modern web
                     technologies and design patterns.
                 </p>
@@ -41,7 +41,7 @@ function AboutMeWindow() {
                         Background
                     </h3>
                     <p>
-                        With 5+ years of experience in web development, I've worked on
+                        With 5+ years of experience in web development, I&apos;ve worked on
                         diverse projects ranging from startups to established companies.
                     </p>
                 </div>
