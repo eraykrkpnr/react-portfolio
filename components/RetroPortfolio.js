@@ -450,7 +450,7 @@ const EducationContent = () => (
     <div className="border-b-2 border-black pb-4">
       <h3 className="font-bold text-lg">Istanbul University</h3>
       <p className="text-sm">Management Information Systems</p>
-      <p className="text-xs text-gray-500">Bachelor's Degree | 2020 – 2025</p>
+      <p className="text-xs text-gray-500">Bachelor&apos;s Degree | 2020 – 2025</p>
     </div>
     <div>
       <h3 className="font-bold text-lg">Marmara University</h3>
