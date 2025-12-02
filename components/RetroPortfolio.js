@@ -127,26 +127,14 @@ const RetroPortfolio = () => {
   };
 
   return (
-    // Main Container with Retro Background Pattern
-    <div 
-      className="min-h-screen font-mono overflow-hidden flex flex-col relative selection:bg-black selection:text-white"
-      style={{
-        backgroundColor: '#808080',
-        backgroundImage: `
-          linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000),
-          linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000)
-        `,
-        backgroundSize: '4px 4px',
-        backgroundPosition: '0 0, 2px 2px',
-        backgroundBlendMode: 'overlay',
-        opacity: 1 // Ensure container is visible
-      }}
-    >
+    // Main Container -> Removed inline styles, added 'retro-bg' class
+    <div className="min-h-screen retro-bg font-mono overflow-hidden flex flex-col relative selection:bg-black selection:text-white">
+      
       {/* Overlay to soften the black pattern to gray-ish */}
       <div className="absolute inset-0 bg-gray-500 opacity-50 pointer-events-none z-0"></div>
 
       {/* Menu Bar */}
-      <div className="h-8 bg-white border-b-2 border-black flex items-center justify-between px-2 z-50 shadow-sm relative select-none" style={{ backgroundColor: '#ffffff' }}>
+      <div className="h-8 bg-white border-b-2 border-black flex items-center justify-between px-2 z-50 shadow-sm relative select-none">
         <div className="flex items-center space-x-4">
           <span className="font-bold flex items-center gap-1 cursor-pointer hover:underline">
             <Terminal size={16} fill="black" /> System
@@ -160,7 +148,7 @@ const RetroPortfolio = () => {
           <div className="flex items-center gap-1">
              <span className="text-sm font-bold">Eray Kırkpınar</span>
           </div>
-          <div className="bg-white border border-black px-2 py-0.5 text-sm shadow-[2px_2px_0_0_rgba(0,0,0,0.2)]" style={{ backgroundColor: '#ffffff' }}>
+          <div className="bg-white border border-black px-2 py-0.5 text-sm shadow-[2px_2px_0_0_rgba(0,0,0,0.2)]">
             {formatTime(time)}
           </div>
         </div>
@@ -192,20 +180,18 @@ const RetroPortfolio = () => {
             <div
               key={key}
               onMouseDown={() => handleFocusWindow(key)}
-              // Forced backgroundColor to white here to fix transparency issue
               style={{
                 backgroundColor: '#ffffff',
                 transformOrigin: `${winState.origin.x}px ${winState.origin.y}px`,
                 left: `${winState.x}px`,
                 top: `${winState.y}px`,
                 zIndex: winState.z,
-                animation: 'zoomIn 0.2s ease-out forwards',
-                boxShadow: isActive ? '8px 8px 0px 0px rgba(0,0,0,0.5)' : '4px 4px 0px 0px rgba(0,0,0,0.3)'
               }}
               className={`
                 absolute flex flex-col border-2 border-black
                 ${winData.w} ${winData.h} max-h-[85vh] max-w-[100vw]
-                origin-center
+                origin-center animate-zoomIn 
+                ${isActive ? 'shadow-retro-active' : 'shadow-retro'}
               `}
             >
               {/* --- Title Bar --- */}
@@ -215,7 +201,6 @@ const RetroPortfolio = () => {
                   h-8 border-b-2 border-black flex items-center justify-between px-1 select-none cursor-grab active:cursor-grabbing
                   ${isActive ? 'bg-black text-white' : 'bg-white text-black'}
                 `}
-                style={{ backgroundColor: isActive ? '#000000' : '#ffffff' }}
               >
                 <div className="flex items-center gap-2 pointer-events-none">
                   <button 
@@ -250,7 +235,7 @@ const RetroPortfolio = () => {
               </div>
 
               {/* --- Window Content --- */}
-              <div className="flex-1 overflow-auto p-0 relative" style={{ backgroundColor: '#ffffff' }}>
+              <div className="flex-1 overflow-auto p-0 relative bg-white">
                  {/* Retro Scrollbar Track */}
                 <div className="absolute right-0 top-0 bottom-0 w-4 border-l-2 border-black bg-gray-100 flex flex-col items-center justify-between py-1 z-20 pointer-events-none" style={{ backgroundColor: '#f3f4f6' }}>
                    <div className="w-full h-4 border-b border-black flex items-center justify-center bg-white"><div className="w-0 h-0 border-l-[4px] border-r-[4px] border-b-[6px] border-l-transparent border-r-transparent border-b-black"></div></div>
@@ -258,7 +243,8 @@ const RetroPortfolio = () => {
                    <div className="w-full h-4 border-t border-black flex items-center justify-center bg-white"><div className="w-0 h-0 border-l-[4px] border-r-[4px] border-t-[6px] border-l-transparent border-r-transparent border-t-black"></div></div>
                 </div>
                 
-                <div className="p-6 pr-8 font-serif leading-relaxed text-sm md:text-base h-full text-black">
+                {/* Main Content Area */}
+                <div className="p-6 pr-8 leading-relaxed text-sm md:text-base h-full text-black retro-scrollbar overflow-y-auto">
                   {winData.content}
                 </div>
               </div>
@@ -274,20 +260,6 @@ const RetroPortfolio = () => {
           );
         })}
       </div>
-      
-      {/* Global CSS for Animations */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-        
-        .font-retro {
-          font-family: 'VT323', monospace;
-        }
-
-        @keyframes zoomIn {
-          0% { transform: scale(0); opacity: 0; }
-          100% { transform: scale(1); opacity: 1; }
-        }
-      `}</style>
     </div>
   );
 };
