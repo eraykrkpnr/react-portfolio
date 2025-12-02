@@ -458,11 +458,6 @@ const ContactContent = () => (
     </div>
 
     <div className="text-center space-y-2">
-      <p className="font-bold border-b border-black w-full pb-1">Voice Line</p>
-      <p className="font-mono">+90 553 320 57 96</p>
-    </div>
-
-    <div className="text-center space-y-2">
       <p className="font-bold border-b border-black w-full pb-1">World Wide Web</p>
       <a href="#" className="block text-blue-700 hover:bg-blue-100 px-2">linkedin.com/in/eraykirkpinar</a>
       <a href="#" className="block text-blue-700 hover:bg-blue-100 px-2">eraykrkpnr.com</a>
