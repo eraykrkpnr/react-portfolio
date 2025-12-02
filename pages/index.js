@@ -1,9 +1,9 @@
 import React from 'react'
-import Home from '../components/Home'
+import RetroPortfolio from '../components/RetroPortfolio'
 
 function index() {
   return (
-    <Home/>
+    <RetroPortfolio/>
   )
 }
 
